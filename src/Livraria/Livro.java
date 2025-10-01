@@ -1,22 +1,27 @@
 package Livraria;
 
-public class Livro {
+public class Livro implements Emprestavel  {
 	
-	private int codigo;
+	private String codigo;
 	private String titulo;
 	private String autor;
 	private Status status;
-	public Livro(int codigo, String titulo, String autor, Status status) {
+	public Livro(String codigo, String titulo, String autor, Status status) {
 		super();
 		this.codigo = codigo;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.status = status;
+		
+		
 	}
-	public int getCodigo() {
+	public Livro() {
+		super();
+	}
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	public String getTitulo() {
@@ -45,6 +50,12 @@ public class Livro {
 	public void devolver() {
 	    status = Status.DISPONIVEL;
 	}
+	@Override
+	public void emprestar(Usuario u) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	
 	
