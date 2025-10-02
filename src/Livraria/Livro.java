@@ -6,14 +6,13 @@ public class Livro implements Emprestavel  {
 	private String titulo;
 	private String autor;
 	private Status status;
-	public Livro(String codigo, String titulo, String autor, Status status) {
-		super();
+	
+	public Livro(String codigo, String titulo, String autor) {
 		this.codigo = codigo;
 		this.titulo = titulo;
 		this.autor = autor;
-		this.status = status;
-		
-		
+		this.status = status.DISPONIVEL;
+				
 	}
 	public Livro() {
 		super();
@@ -55,9 +54,6 @@ public class Livro implements Emprestavel  {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
 	
 	
 }
