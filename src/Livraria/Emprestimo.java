@@ -1,25 +1,32 @@
 package Livraria;
 
+// Importa bibliotecas para trabalhar com datas
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.Date; // ❌ Este import está desnecessário porque você só está usando LocalDate
 
 public class Emprestimo {
 
-	private Livro livro;
-	private Usuario usuario;
-	private LocalDate dataEmprestimo;
-	private LocalDate dataDevolucao;
+	// Declara os atributos do empréstimo
+	private Livro livro;                    // O livro emprestado
+	private Usuario usuario;                // O usuário que fez o empréstimo
+	private LocalDate dataEmprestimo;       // Data do empréstimo
+	private LocalDate dataDevolucao;        // Data da devolução (pode começar como null)
 
+	// Construtor que já recebe o livro e o usuário
 	public Emprestimo(Livro livro, Usuario usuario) {
-		this.livro = livro;
-		this.usuario = usuario;
-		this.dataEmprestimo = LocalDate.now();
+		this.livro = livro;                // Define o livro
+		this.usuario = usuario;            // Define o usuário
+		this.dataEmprestimo = LocalDate.now(); // Define a data atual como data do empréstimo
+		// ❌ Aqui seria bom também alterar o status do livro para EMPRESTADO
+		// Por exemplo: livro.emprestar();
 	}
 
+	// Construtor padrão vazio
 	public Emprestimo() {
-		super();
+		super(); // Chama o construtor da superclasse (Object) — opcional aqui
 	}
 
+	// Getters e setters dos atributos
 	public Livro getLivro() {
 		return livro;
 	}
@@ -52,4 +59,10 @@ public class Emprestimo {
 		this.dataDevolucao = dataDevolucao;
 	}
 
+	// Método toString que retorna todos os dados do empréstimo como texto
+	@Override
+	public String toString() {
+		return "Emprestimo [livro=" + livro + ", usuario=" + usuario + ", dataEmprestimo=" + dataEmprestimo
+				+ ", dataDevolucao=" + dataDevolucao + "]";
+	}
 }

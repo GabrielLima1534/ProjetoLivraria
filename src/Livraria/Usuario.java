@@ -1,44 +1,55 @@
 package Livraria;
 
+// Define a classe como abstrata (não pode ser instanciada diretamente)
 abstract class Usuario {
 
-	public int id;
-	public String nome;
-	public String email;
+    // Atributos comuns a todos os tipos de usuários
+    public int id;         // Identificador único do usuário (ex: 1, 2, 3)
+    public String nome;    // Nome do usuário
+    public String email;   // Email do usuário
 
-	public Usuario() {
-	}
+    // Construtor padrão (vazio) — útil se for preencher os dados depois
+    public Usuario() {
+    }
 
-	public Usuario(int id, String nome, String email) {
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-	}
+    // Construtor com parâmetros — inicializa os dados do usuário direto na criação
+    public Usuario(int id, String nome, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+    }
 
-	public int getId() {
-		return id;
-	}
+    // Métodos getter e setter para acessar/modificar os atributos
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public abstract int getLimiteEmprestimos();
+    // Método abstrato — todas as subclasses (Aluno, Professor) são obrigadas a implementar
+    public abstract int getLimiteEmprestimos();
 
+    // Método para retornar os dados do usuário como uma string (útil para impressão)
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + "]";
+    }
 }
